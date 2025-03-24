@@ -1,0 +1,138 @@
+/* recettePDF.css - Style pour la page de génération PDF */
+.pdf-generation-container {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin: 40px auto;
+    max-width: 500px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pdf-generation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 107, 53, 0.1) 50%);
+    z-index: 0;
+  }
+  
+  .pdf-icon {
+    color: #ff6b35;
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .pdf-title {
+    color: #2d3142;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .pdf-subtitle {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  .pdf-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b35, #f9a826);
+    border-radius: 3px;
+  }
+  
+  .processing-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .processing-dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #ff6b35;
+    border-radius: 50%;
+    animation: dot-pulse 1.5s infinite ease-in-out;
+  }
+  
+  .processing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .processing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes dot-pulse {
+    0%, 100% {
+      transform: scale(0.7);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .return-message {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+    margin-top: 15px;
+  }
+  
+  /* Animation de conteneur */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .pdf-generation-container {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pdf-generation-container {
+      padding: 30px 20px;
+      margin: 20px 15px;
+    }
+    
+    .pdf-icon {
+      font-size: 36px;
+    }
+    
+    .pdf-title {
+      font-size: 20px;
+    }
+  }

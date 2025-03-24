@@ -1,86 +1,54 @@
-// import { Link } from 'react-router-dom';
-
-// const Navbar = () => {
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//       <div className="container">
-//         <Link className="navbar-brand" to="/">
-//           Recettes
-//         </Link>
-//         <button
-//           className="navbar-toggler"
-//           type="button"
-//           data-toggle="collapse"
-//           data-target="#navbarNav"
-//           aria-controls="navbarNav"
-//           aria-expanded="false"
-//           aria-label="Toggle navigation"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className="collapse navbar-collapse" id="navbarNav">
-//           <ul className="navbar-nav ml-auto">
-//             <li className="nav-item">
-//               <Link className="nav-link" to="/">
-//                 Accueil
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link className="nav-link" to="/ajouter">
-//                 Ajouter une recette
-//               </Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-// import { Link } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="navbar navbar-dark bg-dark">
-//       <div className="container">
-//         <Link className="navbar-brand" to="/">
-//           Recette Algérienne 🇩🇿
-//         </Link>
-//         <Link to="/ajouter" className="btn btn-primary">
-//           Ajouter une Recette
-//         </Link>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faBars, 
+  faTimes,
+  faUtensils
+} from "@fortawesome/free-solid-svg-icons";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const location = useLocation();
+
+  const toggleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT50-4SZzpb-AkaQtGt-g51rn7iMFZxgeCBGg&s" // URL de l'image
-            alt="Drapeau de l'Algérie"
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />
-          {' '}
-          Recette Algérienne
-        {/* </Link>
-        <Link to="/ajouter" className="btn btn-primary">
-          Ajouter une Recette */}
+    <nav className="custom-navbar">
+      <div className="navbar-container">
+        <Link to="/" className="brand-link">
+          <div className="brand-container">
+            <div className="logo-container">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT50-4SZzpb-AkaQtGt-g51rn7iMFZxgeCBGg&s"
+                alt="Drapeau de l'Algérie"
+                className="logo-img"
+              />
+            </div>
+            <h1 className="brand-title">Recette <span>Algérienne</span></h1>
+          </div>
         </Link>
+        
+        {/* Suppression des liens de navigation */}
+        <div className="nav-links">
+          {/* Liens supprimés */}
+        </div>
+        
+        <button 
+          className="mobile-menu-btn" 
+          onClick={toggleMobileMenu}
+        >
+          <FontAwesomeIcon icon={showMobileMenu ? faTimes : faBars} />
+        </button>
+      </div>
+      
+      <div className={`mobile-menu ${showMobileMenu ? 'show' : ''}`}>
+        <div className="mobile-nav-links">
+          {/* Liens supprimés également dans le menu mobile */}
+        </div>
       </div>
     </nav>
   );

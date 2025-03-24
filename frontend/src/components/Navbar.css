@@ -1,0 +1,137 @@
+/* Navbar.css - Style redesigné pour Navbar.jsx */
+.custom-navbar {
+    background: linear-gradient(90deg, #2d3142, #35374e);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .brand-container {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Augmentation de l'espace entre le logo et le texte */
+    margin: 0 auto; /* Centre le bloc dans le conteneur */
+  }
+  
+  .logo-container {
+    position: relative;
+    width: 48px; /* Taille légèrement augmentée */
+    height: 48px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #ff6b35, 0 0 0 6px rgba(255, 107, 53, 0.3);
+    transition: all 0.3s;
+  }
+  
+  .logo-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px #ff6b35, 0 0 0 8px rgba(255, 107, 53, 0.2);
+  }
+  
+  .logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .logo-container:hover .logo-img {
+    transform: scale(1.1);
+  }
+  
+  .brand-title {
+    font-size: 1.8rem; /* Taille augmentée */
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    position: relative;
+    transition: all 0.3s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ajout d'ombrage */
+  }
+  
+  .brand-title span {
+    color: #ff6b35;
+    font-weight: 800;
+  }
+  
+  .brand-link {
+    text-decoration: none;
+    margin: 0 auto; /* Centrage du lien */
+  }
+  
+  .brand-link:hover .brand-title {
+    transform: translateX(3px);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Styles pour les liens conservés mais cachés pour maintenir la structure */
+  .nav-link {
+    display: none;
+  }
+  
+  .ajouter-nav-btn {
+    display: none;
+  }
+  
+  /* Menu mobile */
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #2d3142;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .mobile-nav-link {
+    display: none; /* Masquer les liens dans le menu mobile également */
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .brand-container {
+      justify-content: center; /* Centre mieux sur mobile */
+    }
+    
+    .mobile-menu-btn {
+      display: none; /* Masquer le bouton menu sur mobile puisqu'il n'y a plus de liens */
+    }
+  }
