@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecetteById } from "../services/api";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
-import "./recettePDF.css"; // Importation du fichier CSS séparé
+import "./RecettePDF.css"; // Importation du fichier CSS séparé
 
 const RecettePDF = () => {
   const { id } = useParams();

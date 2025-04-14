@@ -9,11 +9,6 @@ import VoirRecette from "./pages/VoirRecette";
 import RecettePDF from "./components/recettePdf"
 import "./App.css";
 
-
-
-
-
-
 function App() {
   return (
     <Router>
