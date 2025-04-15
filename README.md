@@ -82,8 +82,9 @@ volumes:
 2. Copier les 2 fichier **init-mongo.sh** (Script d’import automatique) et **recettes.json** (Recettes à importer dans la base de données)
    
 3. Lancez l'application avec Docker Compose :
-
+```yaml
 docker-compose up -d
+```
 
 4. Accédez à l'application :
 - Frontend : http://localhost:5173
