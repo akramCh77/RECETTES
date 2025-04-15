@@ -24,8 +24,10 @@ Une application complète **MERN Stack** (MongoDB, Express, React, Node.js) pour
 ### 📦 Installation
 
 1. fichier **docker-compose.yml** :
- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
-   services:
+ 
+### docker-compose.yml
+```yaml
+services:
   mongodb:
     image: akramch77/mongo:1.0
     container_name: test-recettes-mongodb
@@ -36,14 +38,11 @@ Une application complète **MERN Stack** (MongoDB, Express, React, Node.js) pour
       - mongodb_data:/data/db
       - ./init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro
       - ./recettes.json:/recettes.json:ro
-
-      
-      
     networks:
       - test-recettes-network
 
   backend:
-    image: akramch77/recettes-backend:1.0 
+    image: akramch77/recettes-backend:1.0
     container_name: test-recettes-backend
     restart: always
     environment:
@@ -57,7 +56,7 @@ Une application complète **MERN Stack** (MongoDB, Express, React, Node.js) pour
       - test-recettes-network
 
   frontend:
-    image: akramch77/recettes-frontend:1.0 
+    image: akramch77/recettes-frontend:1.0
     container_name: test-recettes-frontend
     restart: always
     ports:
@@ -73,15 +72,17 @@ networks:
 
 volumes:
   mongodb_data:
+```
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+               
+ 
 2. Copier les 2 fichier **init-mongo.sh** (Script d’import automatique) et **recettes.json** (Recettes à importer dans la base de données)
    
-3.Lancez l'application avec Docker Compose :
+3. Lancez l'application avec Docker Compose :
 docker-compose up -d
 
-4.Accédez à l'application :
+4. Accédez à l'application :
 - Frontend : http://localhost:5173
 
 - Backend API : http://localhost:5000
@@ -102,8 +103,11 @@ Le fichier recettes.json est importé automatiquement lors du premier lancement.
 
 ## ✨ Fonctionnalités
 ✅ Affichage de toutes les recettes
+
 ✅ Ajout / Modification / Suppression
+
 ✅ Visualisation détaillée avec image et vidéo
+
 ✅ Génération de PDF pour chaque recette
 
 ## 🐳 Structure des services Docker
