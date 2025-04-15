@@ -2,6 +2,8 @@
 
 Une application complète **MERN Stack** (MongoDB, Express, React, Node.js) pour gérer vos recettes de cuisine. Cette application permet de **créer, visualiser, modifier, supprimer des recettes**, avec **intégration d’images**, génération de PDF, et une interface moderne.
 
+**PS : C'est des vraies recettes vous pouvez les essayer 😋**
+
 ---
 
 ## 🚀 Technologies utilisées
